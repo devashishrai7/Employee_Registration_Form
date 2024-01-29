@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    
+    
+    <style>
+        .error {
+            color: red;
+        }
+
+        .valid {
+            color: green;
+        }
+    </style>
+</head>
+
+<body class="bg-warning">
+    <div class="container border border-5 border-success mt-5 p-2">
+        <div class="container-fluid text-center bg-light h2 p-3">
+            Salary
+        </div>
+        <div class="container">
+            <form action="" class="mt-3" id="salary">
+                <div class="row mb-3">
+                    <div class=" col-sm-6 row my-3">
+                        <label for="minvalue" class="col-sm-3">In Hand</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="minvalue" id="minvalue" class="form-control">
+                        </div>
+                    </div>
+                    <div class=" col-sm-6 row my-3">
+                        <label for="maxvalue" class="col-sm-3">P.F.</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="maxvalue" id="maxvalue" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3 offset-3 col-sm-6 row">
+                    <label for="result" class="col-sm-3">Total Salary</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="result" id="result" class="form-control">
+                    </div>
+                </div>
+                <div class="from-check my-3">
+                    <input type="checkbox" name="agree" id="agree" class="form-check-inout">
+                    <label for="declaration" class="form-check-label">I hereby declare that the information given by me in the Application is complete and correct to the best of my knowledge and that nothing has been concealed or distorted.</label>
+                </div>
+                <div class="container text-center py-3 mt-3">
+                    <button type="submit" class="btn-primary">Submit</button>
+                    <button type="reset" class="btn-primary">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    
+    <script>
+        $(document).ready(function () {
+            $("#salary").validate({
+                rules: {
+                    minvalue: "required",
+                    maxvalue: {
+                        required: {
+                            depends: function (element) {
+                                return $("#minvalue").val() > 10
+                            }
+                        }
+                    },
+                    agree:"required"
+                },
+                messages: {
+                    minvalue: "Please enter minimum value",
+                    maxvalue: "Please enter maximum value",
+                    agree:"Please accept declaration"
+                }
+            });
+            let a;
+            let b;
+            let c;
+            $("#minvalue, #maxvalue").keyup(function () {
+                a = parseInt($("#minvalue").val());
+                b = parseInt($("#maxvalue").val());
+                if (b >= 0) {
+                    c = a + b;
+                }
+                else {
+                    c = a
+                }
+                $("#result").val(c)
+            });
+        });
+    </script>
+</body>
+
+</html>

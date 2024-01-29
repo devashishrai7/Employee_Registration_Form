@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .error{
+            color: red;
+        }
+
+        .valid{
+            color: green;
+        }
+    </style>
+</head>
+
+<body class="bg-warning">
+    <div class="container border border-5 border-success mt-5 p-2">
+        <div class="container-fluid text-center bg-light h2 p-3">
+            Personal Details
+        </div>
+        <div class="container">
+            <form action="" id="myform">
+                <div class="row">
+                    <div class="col-sm-6 row my-3">
+                        <label for="fname" class="col-sm-3 pt-2">First Name <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter First Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 row my-3">
+                        <label for="lname" class="col-sm-3 pt-2">Last Name <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 row my-3">
+                        <label for="dob" class="col-sm-4 pt-2">Date of Birth <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" name="dob" id="dob">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 row my-3 pt-2">
+                        <label for="gender" class="col-sm-3">Gender <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="radio" name="gender" id="male" value="male"> Male
+                            <input type="radio" name="gender" id="female" value="female"> Female
+                        </div>
+                    </div>
+                    <div class="col-sm-4 row my-3 pt-2">
+                        <label for="marital" class="col-sm-3">Marital <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-6">
+                            <input type="radio" name="marital" id="unmmaried" value="unmmaried"> Unmmaried
+                            <input type="radio" name="marital" id="married" value="married"> Married
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 row my-3">
+                        <label for="motherName" class="col-sm-3 pt-2">Mother's Name <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="motherName" id="motherName"
+                                placeholder="Enter Mother's Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 row my-3">
+                        <label for="fatherName" class="col-sm-3 pt-2">Father's Name <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="fatherName" id="fatherName"
+                                placeholder="Enter Father's Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 row my-3">
+                        <label for="mobile" class="col-sm-3 pt-2">Mobile Number <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="mobile" id="mobile"
+                                placeholder="Enter Mobile Number" minlength="10" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 row my-3">
+                        <label for="email" class="col-sm-3 pt-2">Email Id <sup class="text-danger">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" name="email" id="email"
+                                placeholder="Enter email id">
+                        </div>
+                    </div>
+                </div>
+                <div class="frameset">
+                    <label for="address" class="col-sm-3 pt-2">Address <sup class="text-danger">*</sup></label>
+                    <div class="container border border-success">
+                        <div class="row my-3">
+                            <label for="house" class="col-sm-2 pt-2">House Number/Ward <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="house" id="house"
+                                    placeholder="Enter House Number/Ward">
+                            </div>
+                            <label for="vill" class="col-sm-2 pt-2">Vill/Town/Street <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="vill" id="vill"
+                                    placeholder="Enter Vill/Town/Street">
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <label for="post" class="col-sm-2 pt-2">Post Office <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="post" id="post"
+                                    placeholder="Enter Post Office">
+                            </div>
+                            <label for="city" class="col-sm-2 pt-2">City <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="city" id="city"
+                                    placeholder="Enter City">
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <label for="landmark" class="col-sm-2 pt-2">Landmark</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="landmark" id="landmark"
+                                    placeholder="Enter Landmark">
+                            </div>
+                            <label for="district" class="col-sm-2 pt-2">District <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="district" id="district"
+                                    placeholder="Enter District">
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <label for="State" class="col-sm-2 pt-2">State <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="state" id="state"
+                                    placeholder="Enter State">
+                            </div>
+                            <label for="pin" class="col-sm-2 pt-2">Pin Code <sup class="text-danger">*</sup></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="pin" id="pin"
+                                    placeholder="Enter Pin Code" minlength="6" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center py-3 mt-3">
+                    <button type="submit" class="btn-primary">Submit</button>
+                    <button type="reset" class="btn-primary">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#myform" ).validate({
+                errorPlacement: function (error, element) {
+                    error.insertBefore(element);
+                },
+                rules: {
+                    fname:"required",
+                    lname:"required",
+                    dob:"required",
+                    gender:"required",
+                    marital:"required",
+                    fatherName:"required",
+                    motherName:"required",
+                    mobile:"required",
+                    email:"required",
+                    house:"required",
+                    vill:"required",
+                    post:"required",
+                    city:"required",
+                    district:"required",
+                    state:"required",
+                    pin:"required"
+                },
+                messages:{
+                    fname:"Please enter first name",
+                    lname:"Please enter last name",
+                    dob:"Please enter date of birth",
+                    gender:"Please select Gender",
+                    marital:"Please select marital status",
+                    fatherName:"Please enter father's name",
+                    motherName:"Please enter mother's name",
+                    mobile: { required: "Please Enter valid mobile number", minlength: "Mobile Number must be 10 digit" },
+                    email: "Please enter valid email", 
+                    house:"Please enter house number",
+                    vill:"Please enter Vill/Town/Street",
+                    post:"Please enter post office",
+                    city:"Please enter city",
+                    district:"Please enter district",
+                    state:"Please enter state",
+                    pin:"Please enter pin code"
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
